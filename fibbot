@@ -4,7 +4,7 @@
 
 #memfile check/creation
 
-memfile=fibbotmemoryfilethatholdsthenumbers
+memfile=memfile
 
 memcheck () {
 if test -f "$memfile"; then
@@ -19,7 +19,7 @@ necessarymath
 }
 
 
-#i am stuc here
+#the math part
 
 necessarymath () {
 a=`tail -2 $memfile | head -1`
