@@ -8,10 +8,10 @@ memfile=memfile
 
 memcheck () {
 if test -f "$memfile"; then
-	    echo "Working from existing memory file."; else
-	    echo "Creating memory file in this directory."
-	    touch $memfile
-	    echo "##Fibbot memory file
+            echo "Working from existing memory file."; else
+            echo "Creating memory file in this directory."
+            touch $memfile
+            echo "##Fibbot memory file
 0
 1" >> $memfile
 fi
@@ -27,11 +27,27 @@ b=`tail -1 $memfile | head -1`
 sum=`expr $a + $b`
 
 if (($sum < 1000)); then
-	echo $sum
-	echo $sum >> $memfile
-	necessarymath; else 
-	echo "Done!"
+        echo $sum
+        echo $sum >> $memfile
+        necessarymath; else
+        echo "Done!"
 fi
 }
 
-memcheck
+help () {
+echo "welcome to the SEXY WORLD OF FIBBOT (pronounced like ribbit)
+SYNOPSIS
+        fibbot [OPTIONS]
+DESCRIPTION
+        fibbot is intended to be run without options--configuration should be done with the fibbotchange command or vim if you're a PRO!!!
+        the only option is "help", which brings this shit up."
+}
+
+
+echo $1
+if [ -z "$1" ]; then
+        memcheck; else
+        if (( $1==help )); then
+                help
+        fi
+fi
