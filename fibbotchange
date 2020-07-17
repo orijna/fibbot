@@ -1,0 +1,34 @@
+#!/bin/zsh
+#use "fibbotchange help" to learn how this works :)
+
+definitionz=$2
+
+
+#this changes the 7th line of fibbot. update if that line is no longer the memname line
+memname () {
+sed -i '7s/.*/memfile='$definitionz'/' fibbot
+echo "memfile name changed to $definitionz :)"
+}
+
+#this changes the 29th line. update if that line is no longer the max number line
+max () {
+sed -i '29s/.*/if (($sum < '$definitionz')); then/' fibbot
+echo "max number changed to $definitionz :)"
+}
+
+#this is the help menu :)
+help () {
+echo "thanks for using this shit!
+
+SYNOPSIS
+	fibbotchange [modifier] [definition]
+
+MODIFIERS
+	help		displays this menu
+	memname		changes the name of the memory file fibbot creates to whatever you set as a [definition]. does not change existing memory file names.
+	max		changes the maximum number fibbot will go to before stopping"
+}
+
+
+
+$1
