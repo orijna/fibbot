@@ -26,7 +26,7 @@ SYNOPSIS
 MODIFIERS
 	help		displays this menu
 	memname		changes the name of the memory file fibbot creates to whatever you set as a [definition]. does not change existing memory file names.
-	max		changes the maximum number fibbot will go to before stopping"
+	max		changes the maximum number fibbot will go to before stopping to whatever you set as a [definition]."
 }
 
 
